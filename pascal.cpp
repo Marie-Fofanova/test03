@@ -1,18 +1,20 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main()
 {
-    // TODO: написать вывод треугольника Паскаля с использованием vector.
-    //
-    // Вид треугольника:
-    // 1
-    // 1 1
-    // 1 2 1
-    // 1 3 3 1
-    // 1 4 6 4 1
-    // ...
+    int n;
+    cin>>n;
+    vector <int> a;
+    a.push_back(1);
+    for (int i=0; i<n; i++){
+	for (int j=0; j<=i; j++) cout<<a[j]<<" ";
+	cout<<endl;
+	a.insert(a.begin(), 1);
+	for (int j=1; j<a.size(); j++) a[j]=a[j]+a[j+1];
+    }
     return 0;
 }
 
